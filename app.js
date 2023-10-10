@@ -28,6 +28,11 @@ app.get('/', (req, res) => {
     res.render('index', locals);
 });
 
+// handle 404 Error
+app.get('*', (req, res) => {
+    res.status(404).render('404');
+})
+
 app.listen(port, () => {
     console.log(`App listening on port ${port}`)
 });
